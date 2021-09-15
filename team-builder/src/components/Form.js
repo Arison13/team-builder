@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './form.css'
 
 const initialFormValues = { friendName: '', friendEmail: '', friendRole: ''}
 
@@ -59,16 +60,16 @@ function Form () {
                 />
                 </label>
                 <label> Role
-                    <select name='role'>
-                        <option>--Pick a Role--</option>
-                        <option>BackEnd Engineer</option>
-                        <option>FronEnd Engineer</option>
-                        <option>Designer</option>
-                        <option>Data Scientist</option>
+                    <select name='friendRole' value={formValues.friendRole} onChange={change}>
+                        <option value="">--Pick a Role--</option>
+                        <option value="BackEnd Engineer"> BackEnd Engineer</option>
+                        <option value="FronEnd Engineer">FronEnd Engineer</option>
+                        <option value="Designer">Designer</option>
+                        <option value="Data Scientist">Data Scientist</option>
                     </select>
                 </label>
             
-                <input type='submit' value='Become A Friend' />
+                <input className='btn' type='submit' value='Become A Friend' />
             </form>
         </div>
     )
