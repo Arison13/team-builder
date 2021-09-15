@@ -9,10 +9,11 @@ const friendsList =[
 function Form () {
  const [formValues, setFormValues]= useState(initialFormValues);
  const [friends, setFriends]=useState(friendsList);
- const change = (evt) => {
-    // const { name, value, } = evt.target;
-    const name = evt.target.name;
-    const value = evt.target.value;
+ 
+ const change = evt => {
+    const { name, value, } = evt.target;
+    // const name = evt.target.name;
+    // const value = evt.target.value;
     setFormValues({ ...formValues, [name]: value });
   }
   
@@ -36,6 +37,7 @@ function Form () {
                    <p> Friend Name is: {friend.friendName}: Email: {friend.friendEmail} Role: {friend.friendRole} </p>
                 </div>
             ))}
+
             <form onSubmit={submit}>
                 <label>Name
                 <input
@@ -50,7 +52,7 @@ function Form () {
                 <label>Email
                 <input
                     type="email"
-                    name="email"
+                    name="friendEmail"
                     placeholder="Enter Your Email"
                     value={formValues.friendEmail}
                     onChange={change}
